@@ -2,6 +2,7 @@ provider "aws" {
   region = "eu-west-2"
 }
 
+# Get latest official Ubuntu AMI
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["099720109477"]
@@ -12,6 +13,7 @@ data "aws_ami" "ubuntu" {
   }
 }
 
+# EC2 Instance
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
