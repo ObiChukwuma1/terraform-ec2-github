@@ -28,12 +28,12 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: terraform-ec2-github
+        working-directory: .
 
       - name: Terraform Plan
         run: terraform plan
-        working-directory: terraform-ec2-github
+        working-directory: .
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        working-directory: terraform-ec2-github
+        working-directory: .
